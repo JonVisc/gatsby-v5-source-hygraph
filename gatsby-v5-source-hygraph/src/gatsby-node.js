@@ -46,7 +46,7 @@ export function pluginOptionsSchema({ Joi }) {
       .description(
         `The local project path where generated query fragments are saved. This is relative to your current working directory. If using multiple instances of the source plugin, you **must** provide a value here to prevent type and/or fragment conflicts.`
       )
-      .default(`graphcms-fragments`),
+      .default(`hygraph-fragments`),
     locales: Joi.array()
       .description(
         `An array of locale key strings from your Hygraph project. You can read more about working with localisation in Hygraph [here](https://hygraph.com/docs/guides/concepts/i18n).`
@@ -66,9 +66,9 @@ export function pluginOptionsSchema({ Joi }) {
     ),
     typePrefix: Joi.string()
       .description(
-        `The string by which every generated type name is prefixed with. For example, a type of Post in Hygraph would become GraphCMS_Post by default. If using multiple instances of the source plugin, you **must** provide a value here to prevent type conflicts`
+        `The string by which every generated type name is prefixed with. For example, a type of Post in Hygraph would become Hygraph_Post by default. If using multiple instances of the source plugin, you **must** provide a value here to prevent type conflicts`
       )
-      .default(`GraphCMS_`),
+      .default(`Hygraph_`),
     queryConcurrency: Joi.number()
       .integer()
       .min(1)
@@ -235,7 +235,7 @@ export async function createSchemaCustomization(gatsbyApi, pluginOptions) {
   const {
     buildMarkdownNodes = false,
     downloadLocalImages = false,
-    typePrefix = 'GraphCMS_',
+    typePrefix = 'Hygraph_',
   } = pluginOptions
 
   const config = await createSourcingConfig(gatsbyApi, pluginOptions)
@@ -314,7 +314,7 @@ export async function onCreateNode(
   {
     buildMarkdownNodes = false,
     downloadLocalImages = false,
-    typePrefix = 'GraphCMS_',
+    typePrefix = 'Hygraph_',
   }
 ) {
   if (
@@ -391,7 +391,7 @@ const generateImageSource = (
   fit = 'clip',
   { quality = 100 }
 ) => {
-  const src = `https://media.graphcms.com/resize=width:${width},height:${height},fit:${fit}/output=quality:${quality}/${baseURL}`
+  const src = `https://media.graphassets.com/resize=width:${width},height:${height},fit:${fit}/output=quality:${quality}/${baseURL}`
 
   return { src, width, height, format }
 }
@@ -459,7 +459,7 @@ function makeResolveGatsbyImageData(cache) {
 
 export function createResolvers(
   { createResolvers, cache },
-  { typePrefix = 'GraphCMS_', downloadLocalImages = false }
+  { typePrefix = 'Hygraph_', downloadLocalImages = false }
 ) {
   const args = {
     quality: {
@@ -467,7 +467,7 @@ export function createResolvers(
       description: `The default image quality generated. This is overridden by any format-specific options.`,
     },
     placeholder: {
-      type: `enum GraphCMSImagePlaceholder { NONE, BLURRED, DOMINANT_COLOR, TRACED_SVG }`,
+      type: `enum HygraphImagePlaceholder { NONE, BLURRED, DOMINANT_COLOR, TRACED_SVG }`,
       description: `The style of temporary image shown while the full image loads.
         BLURRED: generates a very low-resolution version of the image and displays it as a blurred background (default).
         DOMINANT_COLOR: the dominant color of the image used as a solid background color.

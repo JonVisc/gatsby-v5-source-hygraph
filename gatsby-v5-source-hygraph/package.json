@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-source-graphcms",
-  "version": "2.0.0",
-  "description": "The official Gatsby source plugin for Hygraph projects",
+  "name": "gatsby-v5-source-hygraph",
+  "version": "3.0.1",
+  "description": "A Gatsby v5 source plugin for Hygraph projects",
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir ./ --source-maps"
@@ -17,11 +17,11 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "7.16.7",
-    "gatsby-core-utils": "3.4.0",
-    "gatsby-graphql-source-toolkit": "^2.0.1",
-    "gatsby-source-filesystem": "4.4.0",
+    "gatsby-core-utils": "^4.0.0",
+    "gatsby-graphql-source-toolkit": "^2.0.4",
+    "gatsby-source-filesystem": "^5.0.0",
     "he": "1.2.0",
-    "node-fetch": "2.6.1"
+    "node-fetch": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.16.7",
@@ -30,10 +30,10 @@
     "@babel/preset-env": "7.16.7"
   },
   "peerDependencies": {
-    "gatsby": "^4.0.0",
-    "gatsby-plugin-image": "^2.0.0"
+    "gatsby": "^5.0.0",
+    "gatsby-plugin-image": "^3.0.0"
   },
   "engines": {
-    "node": ">=14.15.0"
+    "node": ">=20.11.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "files": [
-    "gatsby-source-graphcms/README.md"
+    "gatsby-v5-source-hygraph/README.md"
   ],
   "imageSize": 100,
   "commit": false,
@@ -45,8 +45,8 @@
     }
   ],
   "contributorsPerLine": 7,
-  "projectName": "gatsby-source-graphcms",
-  "projectOwner": "hygraph",
+  "projectName": "gatsby-v5-source-hygraph",
+  "projectOwner": "jonvisc",
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true

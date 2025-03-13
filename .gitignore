@@ -11,6 +11,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Output
-gatsby-source-graphcms/gatsby-*
-gatsby-source-graphcms/util/
-!gatsby-source-graphcms/src/**
+gatsby-v5-source-hygraph/gatsby-*
+gatsby-v5-source-hygraph/util/
+!gatsby-v5-source-hygraph/src/**

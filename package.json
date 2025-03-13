@@ -2,12 +2,12 @@
   "private": true,
   "workspaces": [
     "demo",
-    "gatsby-source-graphcms"
+    "gatsby-v5-source-hygraph"
   ],
   "scripts": {
     "build": "yarn workspace demo build",
     "clean": "yarn workspace demo clean",
-    "compile": "yarn workspace gatsby-source-graphcms build",
+    "compile": "yarn workspace gatsby-v5-source-hygraph build",
     "dev": "yarn workspace demo dev"
   },
   "release": {
@@ -24,7 +24,7 @@
       [
         "@semantic-release/npm",
         {
-          "pkgRoot": "gatsby-source-graphcms"
+          "pkgRoot": "gatsby-v5-source-hygraph"
         }
       ],
       "@semantic-release/github"
